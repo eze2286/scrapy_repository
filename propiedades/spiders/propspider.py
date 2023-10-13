@@ -1,4 +1,7 @@
 import scrapy
+from scrapy.loader import ItemLoader
+from propiedades.items import PropiedadesItem
+from scrapy.loader.processors import Join, MapCompose
 
 
 class PropspiderSpider(scrapy.Spider):
