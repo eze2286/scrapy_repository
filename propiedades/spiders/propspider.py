@@ -1,7 +1,7 @@
 import scrapy
 from scrapy.loader import ItemLoader
 from scrapy.loader.processors import Join, MapCompose
-from propiedades.items import QuoteItem
+from propiedades.items import Caracteristicas
 
 
 class PropspiderSpider(scrapy.Spider):
@@ -67,7 +67,7 @@ class PropspiderSpider(scrapy.Spider):
                 res = data_results[i].xpath('./text()').get()
             data_dict.update({text_clean: res})
 
-        item = ItemLoader(item=PropiedadesItem(), response=response, selector=response)
+        item = ItemLoader(item=Caracteristicas(), response=response, selector=response)
         
         
         for key, value in data_dict.items():
