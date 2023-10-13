@@ -34,7 +34,7 @@ class PropspiderSpider(scrapy.Spider):
         data_prop_atributes = response.xpath('//div[@class="wrap"]/div[@class="detalleizquierda"]/text()')
         data_prop_results = response.xpath('//div[@class="wrap"]/div[@class="detallederecha colorVerde"]')
         data_prop_more_atributes = response.xpath('//div[@class="wrap"]/div[@class="detallecolDerecha"]/div[@class="detalleizquierda2"]/text()')
-        data_prop_more_results = response.xpath('//div[@class="wrap"]/div[@class="detallecolDerecha"]/div[@class="detallederecha2 colorVerde"]')
+        
 
 
         list_atributes = []
