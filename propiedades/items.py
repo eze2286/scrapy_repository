@@ -88,3 +88,8 @@ class PropiedadesItem(Item):
     direccion = Field(input_processor=MapCompose(not_found_result), output_processor=Join())
 
 
+class QuoteItem(Item):
+    text = Field()
+    tags = Field()
+    author = Field()
+    test = Field()
