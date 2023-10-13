@@ -134,3 +134,17 @@ DOWNLOADER_MIDDLEWARES = {
 # LOG_LEVEL = "INFO"
 # LOG_FILE = "propiedades.log"
 
+# Add Your ScrapeOps API Key
+SCRAPEOPS_API_KEY = '49c9e3d5-a29a-4a17-ad6b-2e3f5a6a503b'
+
+# Add In The ScrapeOps Extension
+EXTENSIONS = {
+        'scrapeops_scrapy.extension.ScrapeOpsMonitor': 500, 
+        }
+
+# Update The Download Middlewares
+DOWNLOADER_MIDDLEWARES = {
+'scrapeops_scrapy.middleware.retry.RetryMiddleware': 550,
+'scrapy.downloadermiddlewares.retry.RetryMiddleware': None,
+}
+
