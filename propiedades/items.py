@@ -38,7 +38,7 @@ def codigo_process(c):
 
 
 
-class PropiedadesItem(Item):
+class caracteristicas(Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
     habitaciones = Field(input_processor=MapCompose(not_found_result), output_processor=Join())
