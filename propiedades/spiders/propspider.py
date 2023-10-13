@@ -1,6 +1,6 @@
 import scrapy
 from scrapy.loader import ItemLoader
-
+from scrapy_repository.propiedades.items import PropiedadesItem
 from scrapy.loader.processors import Join, MapCompose
 
 
