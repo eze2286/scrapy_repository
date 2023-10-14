@@ -30,7 +30,8 @@ class PropspiderSpider(scrapy.Spider):
             codigo = link.xpath('.//div[@class="rdBox codigo"]/text()').get()
             print("Pages to scrape: ", self.pages_to_scrape)
             #print(url)         
-            yield scrapy.Request(url=url, callback=self.parse_prop, meta={"precio": precio, "codigo": codigo, "direccion": direccion})
+            yield scrapy.Request(url=url, callback=self.parse_prop, meta={"precio": precio, "codigo": codigo, "direccion": direccion,
+                                                                         "proxy": "http://api.scraperapi.com?api_key=f851980e1f42ff49ada8556f1c94c3a3"})
         
         try:        
             next_page = response.xpath('//a/font[contains(text(), "Siguiente")]/../@href')[0]
