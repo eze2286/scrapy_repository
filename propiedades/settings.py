@@ -124,15 +124,6 @@ AWS_SECRET_ACCESS_KEY = ''
 
 # Esto es para que scrapy por defecto use un user agent aleatorio
 # Recordar instalar scrapy-user-agents para que esto funcione
-DOWNLOADER_MIDDLEWARES = {
-    "scrapy.downloadermiddlewares.useragent.UserAgentMiddleware": None,
-    "scrapy_user_agents.middlewares.RandomUserAgentMiddleware": 400,
-}
-
-# Configuración del sistema de registro
-# LOG_ENABLED = True
-# LOG_LEVEL = "INFO"
-# LOG_FILE = "propiedades.log"
 
 # Add Your ScrapeOps API Key
 SCRAPEOPS_API_KEY = '49c9e3d5-a29a-4a17-ad6b-2e3f5a6a503b'
@@ -141,10 +132,15 @@ SCRAPEOPS_API_KEY = '49c9e3d5-a29a-4a17-ad6b-2e3f5a6a503b'
 EXTENSIONS = {
         'scrapeops_scrapy.extension.ScrapeOpsMonitor': 500, 
         }
-
-# Update The Download Middlewares
 DOWNLOADER_MIDDLEWARES = {
-'scrapeops_scrapy.middleware.retry.RetryMiddleware': 550,
-'scrapy.downloadermiddlewares.retry.RetryMiddleware': None,
+    "scrapy.downloadermiddlewares.useragent.UserAgentMiddleware": None,
+    "scrapy_user_agents.middlewares.RandomUserAgentMiddleware": 400,
+    'scrapeops_scrapy.middleware.retry.RetryMiddleware': 550,
+    'scrapy.downloadermiddlewares.retry.RetryMiddleware': None,
 }
+
+# Configuración del sistema de registro
+# LOG_ENABLED = True
+# LOG_LEVEL = "INFO"
+# LOG_FILE = "propiedades.log"
 
