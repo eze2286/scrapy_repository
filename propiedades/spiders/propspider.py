@@ -30,7 +30,7 @@ class PropspiderSpider(scrapy.Spider):
         
         try:        
             next_page = response.xpath('//a/font[contains(text(), "Siguiente")]/../@href')[0]
-        except:
+        except IndexError:
             next_page = None
         
         #if next_page and (int(self.pages_to_scrape) == -1) or (int(self.pages_to_scrape) > 0):
