@@ -12,17 +12,8 @@ class PropspiderSpider(scrapy.Spider):
 
     def __init__(self, *args ,**kwargs):
         super(PropspiderSpider, self).__init__(*args, **kwargs)
-        self.pages_to_scrape = int(kwargs.get('pages', -1))
-        
-    def start_requests(self):
-        for url in self.start_urls:
-            yield scrapy.Request(
-                url=url,
-                callback=self.parse,
-                meta={
-                    "proxy": "http://scraperapi:f851980e1f42ff49ada8556f1c94c3a3@proxy-server.scraperapi.com:8001"
-                }
-            )
+        self.pages_to_scrape = int(kwargs.get('pages', -1))        
+
 
     def parse(self, response, **kargs):
         #contenedor_links = response.xpath('//div[@class="resultadoContenedorDatosResultados"]//a/@href')
