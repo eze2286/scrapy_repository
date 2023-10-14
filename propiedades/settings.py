@@ -127,7 +127,7 @@ EXTENSIONS = {
         }
 DOWNLOADER_MIDDLEWARES = {
     "scrapy.downloadermiddlewares.useragent.UserAgentMiddleware": None,
-    "scrapy_user_agents.middlewares.RandomUserAgentMiddleware": 400,
+    #"scrapy_user_agents.middlewares.RandomUserAgentMiddleware": 400,
     'scrapeops_scrapy.middleware.retry.RetryMiddleware': 550,
     'scrapy.downloadermiddlewares.retry.RetryMiddleware': None,
 }
