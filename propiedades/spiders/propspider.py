@@ -18,12 +18,14 @@ class PropspiderSpider(scrapy.Spider):
         #contenedor_links = response.xpath('//div[@class="resultadoContenedorDatosResultados"]//a/@href')
         #contenedor = response.xpath('//div[@class="resultadoContenedorDatosResultados"]//div[@class="resultadoPrecio "]/text()')
         contenedor = response.xpath('//div[@class="resultadoContenedorDatosResultados"]')
+        print("CONTENEDOR: ", contenedor)
+        yield contenedor
         for link in contenedor:            
             #url = link.get()
             url = link.xpath('.//a/@href').get()
             direccion = link.xpath('.//a/text()').get()
             precio = link.xpath('.//div[@class="resultadoPrecio "]/text()').get()
-            print("PRECIO: ", "--------------------------->>> ", precio)
+            #print("PRECIO: ", "--------------------------->>> ", precio)
             codigo = link.xpath('.//div[@class="rdBox codigo"]/text()').get()
             print("Pages to scrape: ", self.pages_to_scrape)
             #print(url)         
