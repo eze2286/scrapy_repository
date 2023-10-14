@@ -27,8 +27,11 @@ class PropspiderSpider(scrapy.Spider):
             print("Pages to scrape: ", self.pages_to_scrape)
             #print(url)         
             yield scrapy.Request(url=url, callback=self.parse_prop, meta={"precio": precio, "codigo": codigo, "direccion": direccion})
-
-        next_page = response.xpath('//a/font[contains(text(), "Siguiente")]/../@href')[0]
+        
+        try:        
+            next_page = response.xpath('//a/font[contains(text(), "Siguiente")]/../@href')[0]
+        except:
+            next_page = None
         
         #if next_page and (int(self.pages_to_scrape) == -1) or (int(self.pages_to_scrape) > 0):
         if next_page and self.pages_to_scrape != 0:             
