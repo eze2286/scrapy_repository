@@ -42,3 +42,6 @@ class PropiedadesItem(Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
     piscina = Field(input_processor=MapCompose(not_found_result))
+    baños = Field(input_processor=MapCompose(not_found_result))
+    garage = Field(input_processor=MapCompose(not_found_result))
+    estado = Field(input_processor=MapCompose(not_found_result))
