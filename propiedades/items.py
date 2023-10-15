@@ -85,5 +85,5 @@ class PropiedadesItem(Item):
     url = Field()
     codigo = Field()
     fecha_actualizacion = Field()
-    direccion = Field()
+    direccion = Field(output_processor=Join())
 
