@@ -41,7 +41,7 @@ def codigo_process(c):
 class PropiedadesItem(Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
-    habitaciones = Field()
+    habitaciones = Field(output_processor=Join())
     baños = Field()
     garage = Field()
     estado = Field()
