@@ -8,17 +8,19 @@ from propiedades.items import PropiedadesItem
 class PropspiderSpider(scrapy.Spider):
     name = "propspider"
     allowed_domains = ["inmobusqueda.com.ar"]
-    start_urls = ["https://www.inmobusqueda.com.ar/departamento-venta-ensenada.html?publicado=2"]
+    #start_urls = ["https://www.inmobusqueda.com.ar/departamento-venta-ensenada.html?publicado=2"]
 
     def __init__(self, *args ,**kwargs):
         super(PropspiderSpider, self).__init__(*args, **kwargs)
         self.pages_to_scrape = int(kwargs.get('pages', -1))
 
     def start_requests(self):
-        for url in self.start_urls:
+        urls = ["https://www.inmobusqueda.com.ar/departamento-venta-ensenada.html?publicado=2"]
+        for url in urls:
+            print(url)
             yield scrapy.Request(url=url, callback=self.parse,
                            meta={"proxy": "http://scraperapi:f851980e1f42ff49ada8556f1c94c3a3@proxy-server.scraperapi.com:8001"})
-            print(url)
+            
 
 
     def parse(self, response, **kargs):
