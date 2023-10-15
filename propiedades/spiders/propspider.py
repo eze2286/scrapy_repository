@@ -18,6 +18,7 @@ class PropspiderSpider(scrapy.Spider):
         for url in self.start_urls:
             yield scrapy.Request(url=url, callback=self.parse,
                            meta={"proxy": "http://scraperapi:f851980e1f42ff49ada8556f1c94c3a3@proxy-server.scraperapi.com:8001"})
+            print(url)
 
 
     def parse(self, response, **kargs):
