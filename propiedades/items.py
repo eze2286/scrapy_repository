@@ -43,6 +43,9 @@ class PropiedadesItem(Item):
     # name = scrapy.Field()
     habitaciones = Field(input_processor=MapCompose(not_found_result))
     baños = Field(input_processor=MapCompose(not_found_result))
+    garage = Field(input_processor=MapCompose(not_found_result))
+    estado = Field(input_processor=MapCompose(not_found_result))
+    superficie_lote = Field(input_processor=MapCompose(not_found_result))
 
 
 
