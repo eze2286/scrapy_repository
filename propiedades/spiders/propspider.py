@@ -19,6 +19,7 @@ class PropspiderSpider(scrapy.Spider):
         #contenedor_links = response.xpath('//div[@class="resultadoContenedorDatosResultados"]//a/@href')
         #contenedor = response.xpath('//div[@class="resultadoContenedorDatosResultados"]//div[@class="resultadoPrecio "]/text()')
         contenedor = response.xpath('//div[@class="resultadoContenedorDatosResultados"]')
+        print("RESPONSE", response)
         print("BODY: ", response.xpath('//body'))
         #print("CONTENEDOR: ", contenedor)
         yield contenedor
