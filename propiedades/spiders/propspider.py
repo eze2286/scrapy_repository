@@ -12,7 +12,12 @@ class PropspiderSpider(scrapy.Spider):
 
     def __init__(self, *args ,**kwargs):
         super(PropspiderSpider, self).__init__(*args, **kwargs)
-        self.pages_to_scrape = int(kwargs.get('pages', -1))        
+        self.pages_to_scrape = int(kwargs.get('pages', -1))
+
+    def start_requests(self):
+        for url in self.start_urls:
+            return Request(url=url, callback=self.parse,
+                           meta={"proxy": "http://scraperapi:f851980e1f42ff49ada8556f1c94c3a3@proxy-server.scraperapi.com:8001"})
 
 
     def parse(self, response, **kargs):
@@ -33,7 +38,7 @@ class PropspiderSpider(scrapy.Spider):
             print("Pages to scrape: ", self.pages_to_scrape)
             #print(url)         
             yield scrapy.Request(url=url, callback=self.parse_prop, meta={"precio": precio, "codigo": codigo, "direccion": direccion,
-                                                                         })
+                                                                         "proxy": "http://scraperapi:f851980e1f42ff49ada8556f1c94c3a3@proxy-server.scraperapi.com:8001"})
         
         try:        
             next_page = response.xpath('//a/font[contains(text(), "Siguiente")]/../@href')[0]
