@@ -16,7 +16,7 @@ class PropspiderSpider(scrapy.Spider):
 
     def start_requests(self):
         for url in self.start_urls:
-            return Request(url=url, callback=self.parse,
+            return scrapy.Request(url=url, callback=self.parse,
                            meta={"proxy": "http://scraperapi:f851980e1f42ff49ada8556f1c94c3a3@proxy-server.scraperapi.com:8001"})
 
 
