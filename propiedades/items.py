@@ -48,12 +48,7 @@ class PropiedadesItem(Item):
     superficie_lote = Field(input_processor=MapCompose(not_found_result))
     superficie_construida = Field(input_processor=MapCompose(not_found_result))
     tamaño_lote = Field(input_processor=MapCompose(not_found_result))
-    jardin = Field(input_processor=MapCompose(default_value_if_empty))
-    piscina = Field(input_processor=MapCompose(not_found_result))
-    orientación = Field(input_processor=MapCompose(not_found_result))
-    terraza = Field(input_processor=MapCompose(not_found_result))
-    seguridad = Field(input_processor=MapCompose(not_found_result))
-    calefacción = Field(input_processor=MapCompose(not_found_result))
+
 
     
     
