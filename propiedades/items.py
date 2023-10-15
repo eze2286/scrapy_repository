@@ -49,7 +49,7 @@ class PropiedadesItem(Item):
     superficie_construida = Field()
     tamaño_lote = Field()
     jardin = Field()
-    piscina = Field(output_processor=Join())
+    piscina = Field()
     orientación = Field()
     terraza = Field()
     seguridad = Field()
