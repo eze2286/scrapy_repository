@@ -3,7 +3,7 @@
 # See documentation in:
 # https://docs.scrapy.org/en/latest/topics/items.html
 
-from scrapy.item import Item, Field
+import scrapy
 from scrapy.loader.processors import Join, MapCompose
 import re
 
@@ -38,7 +38,7 @@ def codigo_process(c):
 
 
 
-class PropiedadesItem(Item):
+class PropiedadesItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
     habitaciones = scrapy.Field(input_processor=MapCompose(not_found_result))
