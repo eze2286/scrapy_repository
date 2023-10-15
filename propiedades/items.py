@@ -44,7 +44,7 @@ class PropiedadesItem(Item):
     habitaciones = Field(input_processor=MapCompose(not_found_result))
     baños = Field(input_processor=MapCompose(not_found_result))
     garage = Field(input_processor=MapCompose(not_found_result))
-    jardin = Field(input_processor=MapCompose(default_value_if_empty))
+    piscina = Field(input_processor=MapCompose(not_found_result))
 
 
 
