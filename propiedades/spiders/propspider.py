@@ -42,7 +42,7 @@ class PropspiderSpider(scrapy.Spider):
             print("Pages to scrape: ", self.pages_to_scrape)
             #print(url)         
             yield scrapy.Request(url=url, callback=self.parse_prop, meta={"precio": precio, "codigo": codigo, "direccion": direccion,
-                                                                          "proxy": "http://mcjavtch-rotate:a64a6dnikv00@p.webshare.io:80"}
+                                                                          "proxy": "http://mcjavtch-rotate:a64a6dnikv00@p.webshare.io:80"})
                                                                          #"proxy": "http://scraperapi:f851980e1f42ff49ada8556f1c94c3a3@proxy-server.scraperapi.com:8001"})
         
         try:        
