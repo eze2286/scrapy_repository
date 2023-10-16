@@ -38,3 +38,4 @@ typing_extensions==4.3.0
 urllib3==1.26.10
 w3lib==1.22.0
 zope.interface==5.4.0
+scrapingbee==2.0.0
